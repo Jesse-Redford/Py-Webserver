@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>JR Lab Live Streaming</title>
+   
+  </head>
+  <body>
+    <h1>JR Lab Live Streaming</h1>
+     <h1>Videoddd Streaming Demonstration</h1>
+    <img src="{{ url_for('video_feed') }}">
+    <p> @2020 Developed byJR.org</p>
+  </body>
+</html>
