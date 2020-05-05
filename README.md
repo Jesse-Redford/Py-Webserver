@@ -1,4 +1,5 @@
 # Py-Webserver
+
 Tutorial for creating a webapp for viewing live video stream from a rasberry pi or windows desktop, from any device connected to the internet. 
 
 
@@ -18,6 +19,7 @@ Before proceeding make sure you have the following packages installed on the dev
 </details>
 
 # Setting up files
+
 Create a project directior (folder) and name it Py-Webserver, this is where we will save our python files and html templates.
 Next, create a folder and name it templates. Copy and paste the code below into notepad and save the file as index.html in the templates folder.
 
@@ -91,6 +93,7 @@ Copy and paste the http line into your webbrowser, you should see a webpage whic
 
 
 # Making your app publicly accessible 
+
 Although testing the script above allows us to view the webapp we created from our host devivce, the link http://127.0.0.1:80/ will not be accesible by other devices in or out of the host devices local network. If you want your app to only be avalible to devices which are connected to your local network, hit Ctrl+C in your terminal then go back to the pywebserver.py file and modify the last line 
 
       app.run(host = '127.0.0.1', port = 80, debug = False, threaded = True)
@@ -114,7 +117,10 @@ Next run the python script pywebserver.py, open a seperate terminal and paste th
 
 Esentailly what we are doing here forwarding the information from our localhost server to ngrok which allows us to bypass your networks firewalls and create a public hosted. After completeing the step above lets verify that a current tunnel is active by going to the link https://dashboard.ngrok.com/status/tunnels. You should see one or two URL links example(https://ef3c35a2.ngrok.io), click on one and your should be brought to your apps webpage. You can now use this link to access the webapp from any device. You can test to make sure this is working by turning on your phones wifi and copy-pasting the URL link above into your browser. 
 
-* Note if you close/reset the ngrok application or python file and repeat the steps above the URL link provided by ngrok will change. Also if your your local host device is a windows desktop and you run into issues, you may need to set up a inbound and outbound rule by navagating to system settings --> windows security --> firewall & network protection --> advanced setttings. click on inbound rules then under actions select "new rule", set rule type to port then hit next, make sure rule applies to TCP and specific local ports 80, hit next and check allow the connection, hit next and check Domain, Private, Public, hit next then name the rule inbound-pythonport, hit finish and repeate the steps above for an outbound rule. 
+
+# Troubleshooting and Closing Remarks
+
+Note if you close/reset the ngrok application or python file and repeat the steps above the URL link provided by ngrok will change. Also if your your local host device is a windows desktop and you run into issues, you may need to set up a inbound and outbound rule by navagating to system settings --> windows security --> firewall & network protection --> advanced setttings. click on inbound rules then under actions select "new rule", set rule type to port then hit next, make sure rule applies to TCP and specific local ports 80, hit next and check allow the connection, hit next and check Domain, Private, Public, hit next then name the rule inbound-pythonport, hit finish and repeate the steps above for an outbound rule. 
 
     
 
