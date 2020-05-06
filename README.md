@@ -194,16 +194,15 @@ Next, create a new python3 file, insert the code below, save it with the name we
 
 If everything is working correctly your http page should look like this.
 
-![Fc-SVD algorithm](https://github.com/Jesse-Redford/Adpative-SVD/blob/master/fc-SVD%20algorithm.PNG?raw=true)
-
-
+![http page example](https://github.com/Jesse-Redford/Py-Webserver/blob/master/JQuery-AJAX%20in%20FLASK.PNG?raw=true)
 
 Now observer your python terminal while clicking the three buttons we created on the webpage, you should observe the following.
 
+    test button Click Here ---> terminal --> you clicked test button, running somefunction
+    up button -----> terminal -----> you pressed up
+    down button ----> terminal ----> you pressed down
 
-    test button Click Here ---> you clicked test button, running somefunction
-    up button -----> you pressed up
-    down button ----> you pressed down
+
 
 
 
