@@ -124,6 +124,96 @@ Note if you close/reset the ngrok application or python file and repeat the step
 
     
 
+# Handling http request with AJAX
+If you want to run background process (functions in python) that are triggered by events such as clicking a button on your http page, the code below shows an example of how to do just that without refreshing page each time! To start create a new text document and paste in the html code below, save the document in your templates folder with the name json.html.
+
+
+<details>
+  <summary> Py-Webserver/templates --> json.html  </summary>
+
+    <html>
+    <head>
+    <title>The jQuery Example</title>
+    <h2>jQuery-AJAX in FLASK. Execute function on button click</h2>  
+  
+	  <!-- Create http handler for click button event to run python background process without refreshing page  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+
+	  <script type=text/javascript> $(function() { $("#testbutton").click(function (event) { $.getJSON('/SomeFunction', { },function(data) { }); return false; }); }); </script>
+	  <script type=text/javascript> $(function() { $("#upbutton").click(function (event) { $.getJSON('/upbutton', { },function(data) { }); return false; }); }); </script>
+	  <script type=text/javascript> $(function() { $("#downbutton").click(function (event) { $.getJSON('/downbutton', { },function(data) { }); return false; }); }); </script> 
+
+    </head>
+    <body>        
+    
+	  <!-- make sure that the button id matches the $("#testbutton") ^^ defined above   -->
+    <input type = "button" id = "testbutton" value = "test button Click Here" />
+    <input type = "button" id = "upbutton" value = "up button" />
+	  <input type = "button" id = "downbutton" value = "down button" />
+
+    </body>    
+    </html>
+</details>
+
+
+
+Next, create a new python3 file, insert the code below, save it with the name webtest.py, run it, then copy and paste the http address that gets displayed in your terminal into your browser.
+
+
+
+<details>
+  <summary> Py-Webserver/ --> webtest.py  </summary>
+
+    from flask import Flask, render_template 
+
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return render_template('json.html')
+
+    @app.route('/SomeFunction')
+    def SomeFunction():
+        print('you clicked test button, running somefunction')
+        return "Nothing"
+
+    @app.route('/upbutton')
+    def upbutton():
+        print('you pressed up')
+        return "Nothing"
+
+    @app.route('/downbutton')
+    def downbutton():
+        print('you pressed down')
+        return "Nothing"
+
+    if __name__ == '__main__':
+        app.run(host='192.168.1.249',port=5002,debug=False, threaded= True)
+    
+</details>
+
+If everything is working correctly your http page should look like this.
+
+
+
+
+
+Now observer your python terminal while clicking the three buttons we created on the webpage, you should observe the following.
+
+
+    test button Click Here ---> you clicked test button, running somefunction
+    up button -----> you pressed up
+    down button ----> you pressed down
+
+
+
+
+
+
+
+
+
+
 
 
 
