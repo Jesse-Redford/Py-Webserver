@@ -203,6 +203,22 @@ Now observer your python terminal while clicking the three buttons we created on
     down button ----> terminal ----> you pressed down
 
 
+# Putting it all together
+The goal of this project was to create a home monitoring application where you can access a live video stream (from rasberry pi) on any device with an internet connection and be able to modify the position of the camera by controlling the servos connected to the pi  directly from the http site in real time. I also included a dashboard which displays the current temperature, humidity, and brightness of the room. I integrated OpenCVs face_recognition to have the host device automatically start recording the video stream when faces are detected. 
+
+Hardware Requirments
+- Rasberry Pi
+- USB webcam
+- adafruit 16channel servo hat
+- servo tilt 
+- 2 mg90 servos
+
+
+<details>
+  <summary> Py-Webserver/ --> websurveillance.py  </summary>
+    
+</details>
+
 
 
 
