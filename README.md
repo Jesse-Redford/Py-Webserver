@@ -123,7 +123,7 @@ Note if you close/reset the ngrok application or python file and repeat the step
 
     
 
-# Handling http request with AJAX
+### Handling http request with AJAX
 If you want to run background process (functions in python) that are triggered by events such as clicking a button on your http page, the code below shows an example of how to do just that without refreshing page each time! To start create a new text document and paste in the html code below, save the document in your templates folder with the name json.html.
 
 
